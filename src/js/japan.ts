@@ -22,9 +22,13 @@ function japanruby(content: string) {
           return "<span class='accent'>" + getChar(sen, 0, 1) + "</span>"
             + getChar(sen, num);
         } else {
+          const charactersNum = countJapaneseCharacters(sen);
+          console.log('sen',sen)
+          console.log('charactersNum',charactersNum)
+          console.log('num',num)
           return getChar(sen, 0, 1)
             + "<span class='accent'>" + getChar(sen, 1, num - 1) + "</span>"
-            + getChar(sen, num);
+            + getChar(sen, num) + `${charactersNum === Number(num) ? '(尾高)' : ''}`;
         }
       });
     }
@@ -33,4 +37,14 @@ function japanruby(content: string) {
     console.error('error parsing "' + content + '"', err);
   }
   return content;
+}
+
+// 计算日文字符的个数，拗音算一个字符
+function countJapaneseCharacters(str) {
+  // 匹配【ゃゅょャュョ】以及它们前面的一个字
+  const regex = /[きしちにひみりぎじぢびぴキシチニヒミリギジヂビピ][ゃゅょャュョ]|./g;
+  // 使用正则表达式匹配所有的字
+  const matches = str.match(regex);
+  // 返回匹配的个数
+  return matches ? matches.length : 0;
 }
