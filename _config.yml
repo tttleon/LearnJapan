@@ -59,7 +59,7 @@ links:
 # exclude my node related stuff
 exclude: ['package.json', 'src', 'node_modules', 'site.vfs', 'Gemfile.lock', 'Gemfile', 'CNAME', 'LICENSE', '*.bat', 'gulpfile.js', 'ionic']
 
-la51_analytics: 17278963
+#la51_analytics: 17278963
 
 categorythemes:
   grammar:

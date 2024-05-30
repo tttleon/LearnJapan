@@ -6,3 +6,7 @@ node_modules
 /site.vfs*
 /_site*.zip
 .vs/
+/.idea/.gitignore
+/.idea/LearnJapan.iml
+/.idea/modules.xml
+/.idea/vcs.xml
